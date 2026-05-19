@@ -1,0 +1,36 @@
+:root {
+  color-scheme: light;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  min-height: 100vh;
+  background-color: #F7F7F7;
+}
+.fade-in {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-banner {
+  min-height: 720px;
+}
+@media (max-width: 768px) {
+  .hero-banner {
+    min-height: 620px;
+  }
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+::selection {
+  background: rgba(30, 79, 28, 0.15);
+}

@@ -1,0 +1,8 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder image">
+  <rect width="1200" height="800" fill="#E7E4DF" />
+  <rect x="100" y="100" width="1000" height="600" rx="36" fill="#D0CCC7" />
+  <path d="M160 240h880" stroke="#B0ACA5" stroke-width="24" stroke-linecap="round" />
+  <path d="M160 330h620" stroke="#B0ACA5" stroke-width="18" stroke-linecap="round" />
+  <path d="M160 430h480" stroke="#B0ACA5" stroke-width="18" stroke-linecap="round" />
+  <text x="600" y="520" text-anchor="middle" fill="#7D7A74" font-family="Noto Sans JP, sans-serif" font-size="48">Placeholder image</text>
+</svg>
