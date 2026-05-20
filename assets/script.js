@@ -1,19 +1,36 @@
 const menuButton = document.getElementById('menuButton');
 const mobileMenu = document.getElementById('mobileMenu');
+const menuClose = document.getElementById('menuClose');
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
-if (menuButton && mobileMenu) {
-  menuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    menuButton.setAttribute('aria-expanded', String(!mobileMenu.classList.contains('hidden')));
-  });
+function setMenu(open) {
+  if (!menuButton || !mobileMenu) return;
+
+  document.body.classList.toggle('menu-open', open);
+  mobileMenu.classList.toggle('is-open', open);
+  mobileMenu.setAttribute('aria-hidden', String(!open));
+  menuButton.setAttribute('aria-expanded', String(open));
 }
 
-if (contactForm) {
+menuButton?.addEventListener('click', () => {
+  setMenu(!mobileMenu?.classList.contains('is-open'));
+});
+
+menuClose?.addEventListener('click', () => setMenu(false));
+
+mobileMenu?.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => setMenu(false));
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setMenu(false);
+});
+
+if (contactForm && formMessage) {
   contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    formMessage.textContent = '送信処理はダミーです。後ほど担当者よりご連絡いたします。';
+    formMessage.textContent = '送信処理はダミーです。内容をご確認いただきありがとうございます。';
     contactForm.reset();
   });
 }
@@ -26,7 +43,8 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, {
-  threshold: 0.18,
+  rootMargin: '0px 0px -10% 0px',
+  threshold: 0.08,
 });
 
-document.querySelectorAll('.fade-in').forEach((section) => observer.observe(section));
+document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));

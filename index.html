@@ -3,285 +3,225 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Forestry Technology and Environment</title>
-  <meta name="description" content="FTE - Forestry Technology and Environment corporate site." />
+  <title>株FTE | Forestry, Technology and Environment</title>
+  <meta name="description" content="株式会社FTEのコーポレートサイトを静的HTMLで再現したページです。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            primary: '#1E4F1C',
-            surface: '#F7F7F7',
-            graydark: '#686868',
-            graylight: 'rgb(220, 220, 220)',
-            deep: 'rgb(30, 30, 30)',
-            footer: 'rgb(50, 50, 50)',
-            beige: '#A28E7D'
-          },
-          fontFamily: {
-            sans: ['"Noto Sans JP"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          },
-          boxShadow: {
-            soft: '0 20px 50px rgba(30,30,30,0.08)',
-          },
-        },
-      },
-    };
-  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Rubik:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body class="bg-surface text-deep font-sans">
-  <header class="sticky top-0 z-30 bg-white/90 backdrop-blur shadow-sm">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-      <a href="#top" class="flex items-center gap-3">
-        <img src="assets/FTE_logo_banner.png" alt="FTE logo" class="h-10 w-auto" onerror="this.src='assets/logo-placeholder.svg'; this.onerror=null;" />
-      </a>
-      <nav class="hidden items-center gap-8 md:flex text-sm text-graydark">
-        <a href="#concept" class="hover:text-primary">代表メッセージ</a>
-        <a href="#services" class="hover:text-primary">事業内容</a>
-        <a href="#news" class="hover:text-primary">お知らせ</a>
-        <a href="#company" class="hover:text-primary">会社概要</a>
-        <a href="#contact" class="hover:text-primary">お問い合わせ</a>
+<body>
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="トップへ戻る">Good Small Company</a>
+      <nav class="global-nav" aria-label="グローバルナビゲーション">
+        <a href="#works">事業内容</a>
+        <a href="#message">お客様の声</a>
+        <a href="#company">会社概要</a>
+        <a href="#contact">採用情報</a>
+        <a href="#contact">お問い合わせ</a>
       </nav>
-      <button id="menuButton" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-graylight text-deep md:hidden" aria-label="メニューを開く">
-        <span class="text-xl">☰</span>
+      <button class="menu-toggle" id="menuButton" type="button" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-    </div>
-    <div id="mobileMenu" class="hidden border-t border-graylight bg-white/95 px-6 py-4 md:hidden">
-      <nav class="flex flex-col gap-3 text-sm text-graydark">
-        <a href="#concept" class="block hover:text-primary">代表メッセージ</a>
-        <a href="#services" class="block hover:text-primary">事業内容</a>
-        <a href="#news" class="block hover:text-primary">お知らせ</a>
-        <a href="#company" class="block hover:text-primary">会社概要</a>
-        <a href="#contact" class="block hover:text-primary">お問い合わせ</a>
-      </nav>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero-banner relative overflow-hidden bg-deep text-white">
-      <div class="absolute inset-0 bg-[url('assets/placeholder.svg')] bg-cover bg-center opacity-40"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(30,30,30,0.72),_transparent_45%)]"></div>
-      <div class="mx-auto flex max-w-7xl flex-col gap-8 px-6 py-24 md:flex-row md:items-center md:justify-between md:py-28">
-        <div class="relative z-10 max-w-2xl">
-          <span class="mb-4 inline-flex rounded-full border border-white/30 bg-white/10 px-4 py-2 text-sm uppercase tracking-[0.25em] text-white/80">Forestry Technology and Environment</span>
-          <h1 class="mt-4 text-4xl font-black leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
-            この街と、これからをつくる。
-          </h1>
-          <p class="mt-6 max-w-xl text-sm leading-7 text-white/80 md:text-base">
-            環境と地域を大切にしながら、持続可能な価値づくりを目指す1ページコーポレートサイトのサンプルです。
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="menu-close" id="menuClose" type="button" aria-label="メニューを閉じる">Close</button>
+    <nav aria-label="モバイルナビゲーション">
+      <a href="#works">事業内容</a>
+      <a href="#message">お客様の声</a>
+      <a href="#company">会社概要</a>
+      <a href="#contact">採用情報</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+
+  <p class="side-copy side-copy-left">創業百年 埼玉県川越市の工務店</p>
+  <p class="side-copy side-copy-right">今日も、この街とともに</p>
+
+  <main>
+    <section class="hero" aria-label="Forestry, Technology and Environment">
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw2MzQ2fDB8MXxjb2xsZWN0aW9ufDU5fDE0MDUzNzN8fHx8fDJ8fDE2MzM5MjU4Nzg&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" alt="木造建築の室内" />
+        <h1><span>Forestry,</span> <span>Technology and</span> <span>Environment</span></h1>
+      </div>
+    </section>
+
+    <section class="section section-message reveal" id="message">
+      <div class="section-inner">
+        <p class="section-label">ご挨拶</p>
+        <div class="section-body message-body">
+          <h2>今日も、この街とともに</h2>
+          <p>
+            100年前にこの街で事業を始めてから、多くの家を作ってきました。今まで何もなかった土地でも、そこに家が建つことで、人が集まり、店ができ、街が発展していく。
           </p>
-          <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-            <a href="#contact" class="inline-flex items-center justify-center rounded-full bg-primary px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#163f16]">お問い合わせ</a>
-            <a href="#services" class="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-7 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/15">事業内容を見る</a>
-          </div>
+          <p>
+            私たちの100年間はこの街とともにあります。私たちが作るのは、ただの新しい家ではなく、長い年月を快適に住み続けることができる家です。そのため、作ることと同じくらい、直すことも大切にしています。この街らしさを大事にしながら、今後もこの街で仕事を続けていきます。
+          </p>
+          <img class="message-photo" src="https://images.unsplash.com/photo-1483970561191-81fc007e8003?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw2MzQ2fDB8MXxjb2xsZWN0aW9ufDczfDg5MzMzMHx8fHx8Mnx8MTYzMzkyODE4MA&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" alt="職人の手元" loading="lazy" />
         </div>
-        <div class="relative z-10 basis-1/2 text-sm text-white/80 md:max-w-md">
-          <div class="rounded-3xl border border-white/10 bg-white/10 p-6 shadow-soft backdrop-blur">
-            <p class="text-xs uppercase tracking-[0.2em] text-white/60">代表メッセージ</p>
-            <p class="mt-4 text-base leading-7">
-              100年以上続く地域の林業・建築・環境事業を、次世代につなげるための活動を展開しています。
+      </div>
+    </section>
+
+    <figure class="wide-photo reveal">
+      <img src="https://storage.googleapis.com/studio-design-asset-files/projects/9YWyooAeqM/s-2840x1928_v-frms_webp_0116f557-b293-4fb9-80a3-d0c56c9fb538.jpg" alt="木造住宅の外観" loading="lazy" />
+    </figure>
+
+    <section class="section reveal" id="works">
+      <div class="section-inner">
+        <p class="section-label">私たちの仕事</p>
+        <div class="section-body">
+          <article class="work-item">
+            <p class="work-number">01</p>
+            <h2>研究・調査・指導</h2>
+            <p>
+              太陽のあたり方や風の通りなど、自然を意識した設計を行います。また、時を重ねるごとに味わいが感じられる国産の木材を使用。流行に左右されず、何世代にも渡り住み続けられる家をご提案いたします。
             </p>
-            <p class="mt-5 text-sm text-white/70">FTEは、素材・技術・環境を大切にする企業として、次代を見据えた提案を続けています。</p>
-          </div>
+            <div class="image-row">
+              <img src="https://images.unsplash.com/photo-1593344035856-821e3726e251?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw2MzQ2fDB8MXxzZWFyY2h8MTk3fHxIT01FJUUzJTgwJTgwSkFQQU58ZW58MHx8fHwxNjMzOTMwNjQz&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" alt="日本の住宅" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1561297331-a9c00b9c2c44?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw2MzQ2fDB8MXxjb2xsZWN0aW9ufDI4fDEwMDEzMzE5fHx8fHwyfHwxNjMzOTMwMTk2&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" alt="木のある住まい" loading="lazy" />
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/9YWyooAeqM/s-2156x1495_v-frms_webp_4e17f59e-b2fc-4a97-90ef-472a8582fe66.jpg" alt="住宅の内装" loading="lazy" />
+            </div>
+          </article>
+
+          <article class="work-item">
+            <p class="work-number">02</p>
+            <h2>出版・教育・啓発</h2>
+            <p>
+              書籍・ボードゲーム出版、ワークショップの実施、講演・啓発活動を通じて、地域や人材の持続可能性に貢献します。
+            </p>
+            <div class="image-row">
+              <img src="https://images.unsplash.com/photo-1611021061421-93741ec41ce1?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw2MzQ2fDB8MXxzZWFyY2h8MTN8fENBUlBFTlRFUlN8ZW58MHx8fHwxNjMzOTMwNjk0&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" alt="木材を扱う職人" loading="lazy" />
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/4yqBBn4dqj/s-5184x3456_v-frms_webp_ac27767b-d975-485e-a218-152a898c5854.jpg" alt="木材の作業場" loading="lazy" />
+              <img src="https://storage.googleapis.com/studio-design-asset-files/projects/4yqBBn4dqj/s-1024x683_v-fs_webp_45f1e1a0-2f02-4664-81c9-ef523691012f.jpg" alt="家づくりの現場" loading="lazy" />
+            </div>
+          </article>
+
+          <a class="text-link" href="#works">
+            <span>私たちの仕事ページへ</span>
+            <i aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </section>
 
-    <section id="concept" class="fade-in bg-surface py-20">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
-            <p class="text-sm uppercase tracking-[0.3em] text-primary">代表メッセージ</p>
-            <h2 class="mt-4 text-3xl font-black text-deep sm:text-4xl">今日も、この街とともに。</h2>
-            <p class="mt-6 max-w-2xl text-base leading-8 text-graydark">私たちは地域が育んできた価値を次世代に届けるため、調査・出版・教育・建築の領域で信頼を積み重ねています。シンプルで丁寧な仕事を通じて、ここで暮らす人々の毎日を支えていきます。</p>
-          </div>
-          <div class="rounded-[2rem] border border-graylight bg-white p-6 shadow-soft">
-            <img src="assets/placeholder.svg" alt="代表メッセージイメージ" class="h-80 w-full rounded-3xl object-cover" />
-          </div>
+    <section class="section section-info reveal" id="info">
+      <div class="section-inner">
+        <p class="section-label">お知らせ</p>
+        <div class="section-body">
+          <p class="empty-news">記事はまだありません。</p>
+          <a class="small-link" href="#info">more</a>
         </div>
       </div>
     </section>
 
-    <section id="services" class="fade-in py-20">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p class="text-sm uppercase tracking-[0.3em] text-primary">事業内容</p>
-            <h2 class="mt-3 text-3xl font-black text-deep sm:text-4xl">地域と環境をつなぐ3つのフィールド</h2>
-          </div>
-          <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary transition hover:bg-primary/10">詳しく相談する</a>
-        </div>
+    <figure class="wood-photo reveal">
+      <img src="https://images.unsplash.com/photo-1573113221491-8b5f6a5f509d?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw2MzQ2fDB8MXxzZWFyY2h8MTczfHx3b29kfGVufDB8fHx8MTYzMzkzNzg2Nw&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" alt="積み重ねられた木材" loading="lazy" />
+    </figure>
 
-        <div class="mt-12 grid gap-8 lg:grid-cols-3">
-          <article class="rounded-[2rem] border border-graylight bg-white p-8 shadow-soft transition hover:-translate-y-1">
-            <div class="mb-6 overflow-hidden rounded-3xl bg-[#f4f4f2]">
-              <img src="assets/placeholder.svg" alt="研究・調査・指導" class="h-52 w-full object-cover" />
-            </div>
-            <p class="text-sm uppercase tracking-[0.3em] text-primary">01</p>
-            <h3 class="mt-4 text-2xl font-bold text-deep">研究・調査・指導</h3>
-            <p class="mt-4 text-sm leading-7 text-graydark">地域の資源と環境を守るための調査研究と、現場に根ざした指導を行います。安心できる未来を目指し、丁寧に取り組みます。</p>
-          </article>
-          <article class="rounded-[2rem] border border-graylight bg-white p-8 shadow-soft transition hover:-translate-y-1">
-            <div class="mb-6 overflow-hidden rounded-3xl bg-[#f4f4f2]">
-              <img src="assets/placeholder.svg" alt="出版・教育・普及" class="h-52 w-full object-cover" />
-            </div>
-            <p class="text-sm uppercase tracking-[0.3em] text-primary">02</p>
-            <h3 class="mt-4 text-2xl font-bold text-deep">出版・教育・普及</h3>
-            <p class="mt-4 text-sm leading-7 text-graydark">地域の歴史や環境情報を発信し、学びの場をつくります。広く理解を深めることで、未来の価値を育てます。</p>
-          </article>
-          <article class="rounded-[2rem] border border-graylight bg-white p-8 shadow-soft transition hover:-translate-y-1">
-            <div class="mb-6 overflow-hidden rounded-3xl bg-[#f4f4f2]">
-              <img src="assets/placeholder.svg" alt="木材と建築の提案" class="h-52 w-full object-cover" />
-            </div>
-            <p class="text-sm uppercase tracking-[0.3em] text-primary">03</p>
-            <h3 class="mt-4 text-2xl font-bold text-deep">木材と建築の提案</h3>
-            <p class="mt-4 text-sm leading-7 text-graydark">自然素材を活かした建築と設計により、暮らしと環境の調和を目指します。長く愛される空間を提案します。</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="news" class="fade-in bg-surface py-20">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p class="text-sm uppercase tracking-[0.3em] text-primary">お知らせ</p>
-            <h2 class="mt-3 text-3xl font-black text-deep sm:text-4xl">最新の活動とお知らせ</h2>
+    <section class="section reveal" id="company">
+      <div class="section-inner">
+        <p class="section-label">会社情報</p>
+        <div class="section-body company-body">
+          <div class="company-copy">
+            <h2>これからも、この街とともに</h2>
+            <p>
+              4代に渡って、この街で歩んできた100年間。当然ながら創業した1900年初頭から時代は大きく変わりました。その中で事業を継続してこれたのは、お客様やパートナー会社様、そしてこの地域の人々のおかげです。
+            </p>
+            <p>
+              今後もこの街と共に、次の100年、200年と続いていく存在となれるよう精一杯進んでいきます。
+            </p>
+            <p class="representative">代表取締役 植木達人</p>
           </div>
-          <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary transition hover:bg-primary/10">もっと見る</a>
-        </div>
-        <div class="grid gap-6 lg:grid-cols-3">
-          <article class="rounded-[2rem] border border-graylight bg-white p-6 shadow-soft transition hover:-translate-y-1">
-            <img src="assets/placeholder.svg" alt="お知らせ" class="h-48 w-full rounded-3xl object-cover" />
-            <div class="mt-5">
-              <span class="text-xs uppercase tracking-[0.25em] text-primary">News</span>
-              <p class="mt-3 text-sm text-graydark">2026年5月18日</p>
-              <h3 class="mt-3 text-xl font-semibold text-deep">新しい地域連携プロジェクトを開始しました</h3>
-            </div>
-          </article>
-          <article class="rounded-[2rem] border border-graylight bg-white p-6 shadow-soft transition hover:-translate-y-1">
-            <img src="assets/placeholder.svg" alt="お知らせ" class="h-48 w-full rounded-3xl object-cover" />
-            <div class="mt-5">
-              <span class="text-xs uppercase tracking-[0.25em] text-primary">News</span>
-              <p class="mt-3 text-sm text-graydark">2026年4月10日</p>
-              <h3 class="mt-3 text-xl font-semibold text-deep">環境教育プログラムを新設しました</h3>
-            </div>
-          </article>
-          <article class="rounded-[2rem] border border-graylight bg-white p-6 shadow-soft transition hover:-translate-y-1">
-            <img src="assets/placeholder.svg" alt="お知らせ" class="h-48 w-full rounded-3xl object-cover" />
-            <div class="mt-5">
-              <span class="text-xs uppercase tracking-[0.25em] text-primary">News</span>
-              <p class="mt-3 text-sm text-graydark">2026年3月5日</p>
-              <h3 class="mt-3 text-xl font-semibold text-deep">ウェブサイトをリニューアルしました</h3>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="company" class="fade-in py-20">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="grid gap-12 lg:grid-cols-[0.9fr_0.8fr] lg:items-center">
-          <div>
-            <p class="text-sm uppercase tracking-[0.3em] text-primary">会社概要</p>
-            <h2 class="mt-4 text-3xl font-black text-deep sm:text-4xl">これからも、この街とともに</h2>
-            <p class="mt-6 max-w-2xl text-base leading-8 text-graydark">持続可能な地域社会の実現を目指し、社員一人ひとりが地域と向き合っています。信頼と誠実を大切にし、未来へつながる選択を積み重ねていきます。</p>
-          </div>
-          <div class="rounded-[2rem] border border-graylight bg-white p-6 shadow-soft">
-            <div class="grid gap-4 text-sm text-graydark sm:grid-cols-2">
+          <div class="company-detail">
+            <dl>
               <div>
-                <p class="font-semibold text-deep">所在地</p>
-                <p>東京都新宿区サンプル町1-2-3</p>
+                <dt>会社名</dt>
+                <dd>株式会社FTE</dd>
               </div>
               <div>
-                <p class="font-semibold text-deep">設立</p>
-                <p>2009年4月</p>
+                <dt>代表</dt>
+                <dd>植木達人</dd>
               </div>
               <div>
-                <p class="font-semibold text-deep">代表者</p>
-                <p>代表取締役 田中太郎</p>
+                <dt>創業</dt>
+                <dd>1911年10月10日</dd>
               </div>
               <div>
-                <p class="font-semibold text-deep">事業内容</p>
-                <p>林業・出版・教育・建築</p>
+                <dt>資本金</dt>
+                <dd>２00万円</dd>
               </div>
-              <div class="sm:col-span-2">
-                <p class="font-semibold text-deep">電話番号</p>
-                <p>03-1234-5678</p>
+              <div>
+                <dt>所在地</dt>
+                <dd>〒３９９－４５１１　長野県上伊那郡南箕輪村８３０６－１４５８</dd>
               </div>
-            </div>
+              <div>
+                <dt>電話番号</dt>
+                <dd>00-0000-0000</dd>
+              </div>
+            </dl>
+            <img src="https://storage.googleapis.com/studio-design-asset-files/projects/9YWyooAeqM/s-750x750_v-fs_webp_5cd719a4-441c-4660-afea-f304f6f4b2ec.jpg" alt="会社の外観" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="fade-in bg-surface py-20">
-      <div class="mx-auto max-w-7xl px-6">
-        <div class="grid gap-12 lg:grid-cols-[0.95fr_0.85fr] lg:items-center">
-          <div>
-            <p class="text-sm uppercase tracking-[0.3em] text-primary">お問い合わせ</p>
-            <h2 class="mt-4 text-3xl font-black text-deep sm:text-4xl">お気軽にご相談ください</h2>
-            <p class="mt-6 max-w-2xl text-base leading-8 text-graydark">お聞きしたい内容を入力して送信してください。後ほど担当者よりご連絡いたします。※送信はダミー処理です。</p>
-          </div>
-          <div class="rounded-[2rem] border border-graylight bg-white p-8 shadow-soft">
-            <form id="contactForm" class="grid gap-5" action="#" method="post">
-              <div class="grid gap-5 sm:grid-cols-2">
-                <label class="block text-sm font-medium text-deep">
-                  名前
-                  <input type="text" name="name" required class="mt-2 w-full rounded-3xl border border-graylight bg-white px-4 py-3 text-sm text-deep outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="山田 太郎" />
-                </label>
-                <label class="block text-sm font-medium text-deep">
-                  会社名
-                  <input type="text" name="company" class="mt-2 w-full rounded-3xl border border-graylight bg-white px-4 py-3 text-sm text-deep outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="株式会社サンプル" />
-                </label>
-              </div>
-              <div class="grid gap-5 sm:grid-cols-2">
-                <label class="block text-sm font-medium text-deep">
-                  メールアドレス
-                  <input type="email" name="email" required class="mt-2 w-full rounded-3xl border border-graylight bg-white px-4 py-3 text-sm text-deep outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="info@example.com" />
-                </label>
-                <label class="block text-sm font-medium text-deep">
-                  電話番号
-                  <input type="tel" name="phone" class="mt-2 w-full rounded-3xl border border-graylight bg-white px-4 py-3 text-sm text-deep outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="03-1234-5678" />
-                </label>
-              </div>
-              <label class="block text-sm font-medium text-deep">
-                お問い合わせ内容
-                <textarea name="message" rows="5" required class="mt-2 w-full rounded-3xl border border-graylight bg-white px-4 py-3 text-sm text-deep outline-none transition focus:border-primary focus:ring-2 focus:ring-primary/20" placeholder="お問い合わせ内容をご入力ください。"></textarea>
-              </label>
-              <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <label class="flex items-center gap-3 text-sm text-graydark">
-                  <input type="checkbox" name="consent" required class="h-4 w-4 rounded border-graylight text-primary focus:ring-primary" />
-                  プライバシーポリシーに同意する
-                </label>
-                <button type="submit" class="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white transition hover:bg-[#163f16]">送信</button>
-              </div>
-              <p id="formMessage" class="text-sm text-primary"></p>
-            </form>
-          </div>
-        </div>
+    <section class="contact-wrap reveal" id="contact">
+      <div class="contact-panel">
+        <h2>お問い合わせ</h2>
+        <p>弊社へのお問い合わせはこちらよりお願い致します。２営業日以内にご返信させて頂きます。</p>
+
+        <form class="contact-form" id="contactForm" action="#" method="post">
+          <label>
+            <span>お名前 <em>必須</em></span>
+            <input type="text" name="お名前" required />
+          </label>
+          <label>
+            <span>会社名</span>
+            <input type="text" name="会社名" />
+          </label>
+          <label>
+            <span>メールアドレス <em>必須</em></span>
+            <input type="email" name="メールアドレス" required />
+          </label>
+          <label>
+            <span>電話番号</span>
+            <input type="tel" name="電話番号" />
+          </label>
+          <label>
+            <span>お問い合わせ内容 <em>必須</em></span>
+            <textarea name="お問い合わせ内容" required></textarea>
+          </label>
+          <label class="privacy-check">
+            <input type="checkbox" name="プライバシーポリシーに同意" required />
+            <span><a href="#top">プライバシーポリシー</a>に同意する <em>必須</em></span>
+          </label>
+          <p class="form-note">入力確認画面や自動返信メールはございません。<br />ご入力内容を確認の上、送信ボタンを押して下さい。</p>
+          <button type="submit">送信</button>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer class="bg-footer text-surface">
-    <div class="mx-auto max-w-7xl px-6 py-10">
-      <div class="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p class="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">Forestry Technology and Environment</p>
-          <p class="mt-3 max-w-lg text-sm leading-7 text-white/70">地域と自然に寄り添い、これからの暮らしを支える事業を展開しています。</p>
-        </div>
-        <div class="flex flex-col gap-2 text-sm text-white/70 md:items-end">
-          <a href="#top" class="hover:text-white">トップへ戻る</a>
-          <span>© 2026 FTE. All Rights Reserved.</span>
-        </div>
-      </div>
-    </div>
+  <footer class="site-footer">
+    <nav class="footer-nav" aria-label="フッターナビゲーション">
+      <a href="#message">ご挨拶</a>
+      <a href="#works">仕事のこと</a>
+      <a href="#info">お知らせ</a>
+      <a href="#company">会社概要</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="footer-brand" href="#top" aria-label="トップへ戻る">
+      <span>G</span>
+      <strong>Good Small Company</strong>
+    </a>
+    <a class="privacy-link" href="#top">｜ プライバシーポリシー |</a>
+    <small>©2021 GOOD SMALL COMPANY</small>
   </footer>
 
   <script src="assets/script.js"></script>
