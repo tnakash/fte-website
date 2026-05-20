@@ -751,6 +751,71 @@ textarea {
   letter-spacing: 0.1em;
 }
 
+.page-header {
+  position: relative;
+  background: var(--paper);
+}
+
+.privacy-page {
+  padding: 84px 30px 130px;
+  background: var(--paper);
+}
+
+.privacy-hero,
+.privacy-content {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.privacy-hero {
+  display: grid;
+  grid-template-columns: 45px minmax(0, 1fr);
+  gap: 80px;
+  padding: 70px 0 86px;
+  border-bottom: 1px solid var(--line);
+}
+
+.privacy-hero h1 {
+  margin: 0 0 22px;
+  color: var(--ink);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+.privacy-hero p:not(.section-label),
+.privacy-content p {
+  margin: 0;
+  color: var(--ink);
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  line-height: 1.9;
+}
+
+.privacy-content {
+  padding: 64px 0 0 125px;
+}
+
+.privacy-content h2 {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.6;
+}
+
+.privacy-content p {
+  margin-bottom: 42px;
+}
+
+.privacy-content .privacy-updated {
+  margin: 20px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -831,6 +896,15 @@ textarea {
 
   .section-inner {
     display: block;
+  }
+
+  .privacy-hero {
+    display: block;
+    padding: 42px 0 60px;
+  }
+
+  .privacy-content {
+    padding-left: 0;
   }
 
   .section-label {
