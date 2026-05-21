@@ -7,7 +7,7 @@
   <meta name="description" content="株式会社FTEのコーポレートサイトを静的HTMLで再現したページです。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Rubik:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Rubik:wght@400;500;600;700&amp;family=Shippori+Mincho+B1:wght@400;500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
@@ -19,14 +19,13 @@
         </span>
         <span class="brand-text">
           <strong class="brand-name">株式会社FTE</strong>
-          <span class="brand-catch">Forestry, Technology and Environment</span>
         </span>
       </a>
       <nav class="global-nav" aria-label="グローバルナビゲーション">
-        <a href="#works">事業内容</a>
-        <a href="#message">お客様の声</a>
+        <a href="#message">ご挨拶</a>
+        <a href="works.html#works">私たちの仕事</a>
+        <a href="#info">お知らせ</a>
         <a href="#company">会社概要</a>
-        <a href="#contact">採用情報</a>
         <a href="#contact">お問い合わせ</a>
       </nav>
       <button class="menu-toggle" id="menuButton" type="button" aria-label="メニューを開く" aria-controls="mobileMenu" aria-expanded="false">
@@ -40,16 +39,17 @@
   <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <button class="menu-close" id="menuClose" type="button" aria-label="メニューを閉じる">Close</button>
     <nav aria-label="モバイルナビゲーション">
-      <a href="#works">事業内容</a>
-      <a href="#message">お客様の声</a>
+      <a href="#message">ご挨拶</a>
+      <a href="works.html#works">私たちの仕事</a>
+      <a href="#info">お知らせ</a>
       <a href="#company">会社概要</a>
-      <a href="#contact">採用情報</a>
       <a href="#contact">お問い合わせ</a>
     </nav>
   </div>
 
-  <p class="side-copy side-copy-left">創業百年 埼玉県川越市の工務店</p>
-  <p class="side-copy side-copy-right">今日も、この街とともに</p>
+  <p class="side-copy side-copy-left">地域と技術をつなぎ、</p>
+  <p class="side-copy side-copy-right">森林・環境・教育分野の知見を社会へ。</p>
+  <p class="side-copy side-copy-mobile">地域と技術をつなぎ、森林・環境・教育分野の知見を社会へ。</p>
 
   <main>
     <section class="hero" aria-label="株式会社FTE">
@@ -66,12 +66,18 @@
       <div class="section-inner">
         <p class="section-label">ご挨拶</p>
         <div class="section-body message-body">
-          <h2>今日も、この街とともに</h2>
+          <h2>地域と森林の未来へ<span class="heading-dot">。</span></h2>
           <p>
-            100年前にこの街で事業を始めてから、多くの家を作ってきました。今まで何もなかった土地でも、そこに家が建つことで、人が集まり、店ができ、街が発展していく。
+            森林・環境分野を取り巻く課題は、地域社会、産業、行政、研究など、多様な領域と深く関わっています。
           </p>
           <p>
-            私たちの100年間はこの街とともにあります。私たちが作るのは、ただの新しい家ではなく、長い年月を快適に住み続けることができる家です。そのため、作ることと同じくらい、直すことも大切にしています。この街らしさを大事にしながら、今後もこの街で仕事を続けていきます。
+            これまで大学において、森林資源の利活用や環境に関する研究・教育に携わる中で、現場と研究をつなぐことの重要性を強く感じてきました。
+          </p>
+          <p>
+            株式会社FTEでは、研究者として培ってきた知見を基盤に、地域や企業、行政の皆さまと連携しながら、森林・環境・技術に関する課題解決や価値創出に取り組んでまいります。
+          </p>
+          <p>
+            専門的な知識をわかりやすく社会へ還元し、持続可能な地域と環境の未来に貢献できるよう努めてまいります。
           </p>
           <img class="message-photo" src="https://images.unsplash.com/photo-1483970561191-81fc007e8003?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=Mnw2MzQ2fDB8MXxjb2xsZWN0aW9ufDczfDg5MzMzMHx8fHx8Mnx8MTYzMzkyODE4MA&amp;ixlib=rb-1.2.1&amp;q=80&amp;w=1080" alt="職人の手元" loading="lazy" />
         </div>
@@ -112,8 +118,8 @@
             </div>
           </article>
 
-          <a class="text-link" href="#works">
-            <span>私たちの仕事ページへ</span>
+          <a class="text-link" href="works.html#works">
+            <span>私たちの仕事を見る</span>
             <i aria-hidden="true"></i>
           </a>
         </div>
@@ -125,7 +131,10 @@
         <p class="section-label">お知らせ</p>
         <div class="section-body">
           <p class="empty-news">記事はまだありません。</p>
-          <a class="small-link" href="#info">more</a>
+          <a class="small-link" href="#info">
+            <span>お知らせを見る</span>
+            <i aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </section>
@@ -138,16 +147,6 @@
       <div class="section-inner">
         <p class="section-label">会社情報</p>
         <div class="section-body company-body">
-          <div class="company-copy">
-            <h2>これからも、この街とともに</h2>
-            <p>
-              4代に渡って、この街で歩んできた100年間。当然ながら創業した1900年初頭から時代は大きく変わりました。その中で事業を継続してこれたのは、お客様やパートナー会社様、そしてこの地域の人々のおかげです。
-            </p>
-            <p>
-              今後もこの街と共に、次の100年、200年と続いていく存在となれるよう精一杯進んでいきます。
-            </p>
-            <p class="representative">代表取締役 植木達人</p>
-          </div>
           <div class="company-detail">
             <dl>
               <div>
@@ -175,7 +174,6 @@
                 <dd>00-0000-0000</dd>
               </div>
             </dl>
-            <img src="https://storage.googleapis.com/studio-design-asset-files/projects/9YWyooAeqM/s-750x750_v-fs_webp_5cd719a4-441c-4660-afea-f304f6f4b2ec.jpg" alt="会社の外観" loading="lazy" />
           </div>
         </div>
       </div>
@@ -184,7 +182,10 @@
     <section class="contact-wrap reveal" id="contact">
       <div class="contact-panel">
         <h2>お問い合わせ</h2>
-        <p>弊社へのお問い合わせはこちらよりお願い致します。２営業日以内にご返信させて頂きます。</p>
+        <p>
+          弊社へのお問い合わせはこちらよりお願い致します。<br />
+          ２営業日以内にご返信させて頂きます。
+        </p>
 
         <form class="contact-form" id="contactForm" action="#" method="post">
           <label>
@@ -222,7 +223,7 @@
   <footer class="site-footer">
     <nav class="footer-nav" aria-label="フッターナビゲーション">
       <a href="#message">ご挨拶</a>
-      <a href="#works">仕事のこと</a>
+      <a href="works.html#works">私たちの仕事</a>
       <a href="#info">お知らせ</a>
       <a href="#company">会社概要</a>
       <a href="#contact">お問い合わせ</a>
@@ -233,7 +234,6 @@
       </span>
       <span class="footer-brand-text">
         <strong>株式会社FTE</strong>
-        <span>Forestry, Technology and Environment</span>
       </span>
     </a>
     <a class="privacy-link" href="privacy.html#privacy">｜ プライバシーポリシー |</a>

@@ -48,3 +48,33 @@ const observer = new IntersectionObserver((entries) => {
 });
 
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+const sideCopies = document.querySelectorAll('.side-copy');
+const messageSection = document.getElementById('message');
+const worksSection = document.getElementById('works');
+
+if (sideCopies.length && messageSection) {
+  let ticking = false;
+
+  const updateSideCopyOpacity = () => {
+    const fadeEnd = worksSection ? worksSection.offsetTop : messageSection.offsetTop + messageSection.offsetHeight;
+    const progress = Math.min(Math.max(window.scrollY / fadeEnd, 0), 1);
+    const opacity = 0.84 * (1 - progress);
+
+    sideCopies.forEach((copy) => {
+      copy.style.setProperty('--side-copy-opacity', opacity.toFixed(3));
+    });
+
+    ticking = false;
+  };
+
+  const requestSideCopyUpdate = () => {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(updateSideCopyOpacity);
+  };
+
+  updateSideCopyOpacity();
+  window.addEventListener('scroll', requestSideCopyUpdate, { passive: true });
+  window.addEventListener('resize', requestSideCopyUpdate);
+}
