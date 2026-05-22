@@ -67,6 +67,10 @@ textarea {
   background: transparent;
 }
 
+body.menu-open .site-header {
+  z-index: 70;
+}
+
 .header-inner {
   display: flex;
   align-items: center;
@@ -109,10 +113,19 @@ textarea {
 }
 
 .brand-name {
+  display: inline-flex;
+  align-items: baseline;
   font-family: var(--heading);
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.08em;
+}
+
+.brand-name-en {
+  display: inline-block;
+  margin-left: 0.22em;
+  letter-spacing: 0.04em;
+  transform: translateY(0.03em);
 }
 
 h1,
@@ -157,7 +170,7 @@ h3,
   position: fixed;
   top: 18px;
   right: 14px;
-  z-index: 40;
+  z-index: 60;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
@@ -172,6 +185,10 @@ h3,
   transition: background-color 0.25s ease, transform 0.25s ease;
 }
 
+body.menu-open .menu-toggle {
+  background: rgba(255, 255, 255, 0.96);
+}
+
 .menu-toggle span {
   position: relative;
   display: block;
@@ -179,8 +196,10 @@ h3,
   margin: 0 auto;
   border-radius: 999px;
   background: #000000;
+  backface-visibility: hidden;
   transform-origin: center;
-  transition: width 0.25s ease, transform 0.25s ease, opacity 0.2s ease;
+  will-change: transform;
+  transition: transform 0.25s ease, opacity 0.2s ease;
 }
 
 .menu-toggle span:nth-child(1) {
@@ -202,13 +221,13 @@ h3,
 
 body.menu-open .menu-toggle span:nth-child(1) {
   width: 24px;
-  transform: translateY(5px) rotate(45deg);
+  transform: translate3d(0, 5px, 0) rotate(45deg);
 }
 
 body.menu-open .menu-toggle span:nth-child(2) {
   width: 24px;
   opacity: 1;
-  transform: translateY(-5px) rotate(-45deg);
+  transform: translate3d(0, -5px, 0) rotate(-45deg);
 }
 
 .mobile-menu {
@@ -241,20 +260,6 @@ body.menu-open .menu-toggle span:nth-child(2) {
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 0.12em;
-}
-
-.menu-close {
-  position: absolute;
-  top: 22px;
-  right: 22px;
-  border: 0;
-  background: transparent;
-  color: var(--muted);
-  cursor: pointer;
-  font-family: var(--latin);
-  font-size: 12px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
 }
 
 .side-copy {
@@ -860,6 +865,10 @@ body.menu-open .menu-toggle span:nth-child(2) {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.08em;
+}
+
+.footer-brand-text .brand-name {
+  font-size: 20px;
 }
 
 .privacy-link {

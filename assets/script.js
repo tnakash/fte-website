@@ -1,6 +1,5 @@
 const menuButton = document.getElementById('menuButton');
 const mobileMenu = document.getElementById('mobileMenu');
-const menuClose = document.getElementById('menuClose');
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
@@ -16,8 +15,6 @@ function setMenu(open) {
 menuButton?.addEventListener('click', () => {
   setMenu(!mobileMenu?.classList.contains('is-open'));
 });
-
-menuClose?.addEventListener('click', () => setMenu(false));
 
 mobileMenu?.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => setMenu(false));
@@ -51,13 +48,12 @@ document.querySelectorAll('.reveal').forEach((element) => observer.observe(eleme
 
 const sideCopies = document.querySelectorAll('.side-copy');
 const messageSection = document.getElementById('message');
-const worksSection = document.getElementById('works');
 
 if (sideCopies.length && messageSection) {
   let ticking = false;
 
   const updateSideCopyOpacity = () => {
-    const fadeEnd = worksSection ? worksSection.offsetTop : messageSection.offsetTop + messageSection.offsetHeight;
+    const fadeEnd = Math.max(messageSection.offsetTop, 1);
     const progress = Math.min(Math.max(window.scrollY / fadeEnd, 0), 1);
     const opacity = 0.84 * (1 - progress);
 
