@@ -27,8 +27,32 @@ document.addEventListener('keydown', (event) => {
 if (contactForm && formMessage) {
   contactForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    formMessage.textContent = '送信処理はダミーです。内容をご確認いただきありがとうございます。';
-    contactForm.reset();
+
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const formData = new FormData(contactForm);
+
+    formMessage.textContent = '\u9001\u4FE1\u4E2D\u3067\u3059\u3002';
+    if (submitButton) submitButton.disabled = true;
+
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        Accept: 'application/json',
+      },
+    })
+      .then((response) => {
+        if (!response.ok) throw new Error('Form submission failed');
+
+        contactForm.reset();
+        formMessage.textContent = '\u304A\u554F\u3044\u5408\u308F\u305B\u3092\u9001\u4FE1\u3057\u307E\u3057\u305F\u3002\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059\u3002';
+      })
+      .catch(() => {
+        formMessage.textContent = '\u9001\u4FE1\u3067\u304D\u307E\u305B\u3093\u3067\u3057\u305F\u3002\u6642\u9593\u3092\u304A\u3044\u3066\u518D\u5EA6\u304A\u8A66\u3057\u304F\u3060\u3055\u3044\u3002';
+      })
+      .finally(() => {
+        if (submitButton) submitButton.disabled = false;
+      });
   });
 }
 

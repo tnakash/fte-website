@@ -6,7 +6,7 @@ STUDIO のライブプレビューをもとに、静的な HTML/CSS/JavaScript �
 
 - `index.html` - 再現ページ本体
 - `assets/styles.css` - レイアウト、レスポンシブ、フォーム、メニューのスタイル
-- `assets/script.js` - モバイルメニュー、ダミーフォーム送信、スクロール表示制御
+- `assets/script.js` - モバイルメニュー、問い合わせフォーム送信、スクロール表示制御
 - `assets/placeholder.svg` / `assets/logo-placeholder.svg` - 既存の予備アセット
 
 ## 確認方法
@@ -22,4 +22,4 @@ Cloudflare Pages や GitHub Pages など、静的ファイルを配信できる�
 
 ## フォーム
 
-問い合わせフォームはダミー送信です。実送信に接続する場合は、`index.html` の `form` 要素に送信先を設定し、`assets/script.js` の `submit` イベント処理を調整してください。
+問い合わせフォームは Formspree のエンドポイント `https://formspree.io/f/xjgzoblb` に送信します。送信先を変更する場合は、`index.html` の `form` 要素の `action` を更新してください。

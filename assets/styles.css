@@ -840,6 +840,12 @@ body.menu-open .menu-toggle span:nth-child(2) {
   transform: translateY(-1px);
 }
 
+.contact-form button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+  transform: none;
+}
+
 .form-message {
   min-height: 1.6em;
   margin: 18px 0 0;
