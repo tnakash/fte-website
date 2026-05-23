@@ -292,10 +292,12 @@ body.menu-open .menu-toggle span:nth-child(2) {
 
 .side-copy-left {
   display: none;
+  top: 130px;
 }
 
 .side-copy-right {
   display: none;
+  top: 130px;
 }
 
 .side-copy-mobile {
@@ -312,18 +314,24 @@ body.menu-open .menu-toggle span:nth-child(2) {
   .brand {
     position: relative;
     z-index: 20;
-    transform: translate(-70px, 6px);
+    transform-origin: top left;
+    transform: translate(-70px, -14px) scale(1.1);
   }
 
   .brand-mark {
-    width: 160px;
-    height: 202px;
+    width: 128px;
+    height: 162px;
   }
 
   .global-nav {
     align-self: flex-start;
     margin-top: 30px;
     margin-bottom: 0;
+  }
+
+  .hero-image {
+    width: calc(100% - 12px);
+    margin: 0 6px;
   }
 }
 
@@ -890,14 +898,18 @@ body.menu-open .menu-toggle span:nth-child(2) {
 
 .footer-brand-text strong {
   color: var(--paper);
-  font-family: var(--heading);
+  font-family: var(--body);
   font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
+  font-weight: 400;
+  letter-spacing: 0.03em;
 }
 
 .footer-brand-text .brand-name {
   font-size: 20px;
+}
+
+.footer-brand-text .brand-name-ja {
+  font-size: 0.78em;
 }
 
 .privacy-link {
