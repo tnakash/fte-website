@@ -315,7 +315,7 @@ body.menu-open .menu-toggle span:nth-child(2) {
     position: relative;
     z-index: 20;
     transform-origin: top left;
-    transform: translate(-70px, -46px) scale(1.1);
+    transform: translate(-70px, -24px) scale(1.1);
   }
 
   .brand-mark {
@@ -330,7 +330,7 @@ body.menu-open .menu-toggle span:nth-child(2) {
   }
 
   .hero-image {
-    width: calc(100% - 28px);
+    width: calc(100% - 18px);
     margin: 0 6px;
   }
 
@@ -1337,7 +1337,7 @@ body.menu-open .menu-toggle span:nth-child(2) {
 
   .side-copy {
     top: 76px;
-    right: 12px;
+    right: 24px;
     left: auto;
     width: 22px;
     font-size: 12px;
