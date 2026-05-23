@@ -1305,16 +1305,18 @@ body.menu-open .menu-toggle span:nth-child(2) {
   }
 
   .brand {
-    position: static;
+    position: absolute;
+    top: 18px;
+    left: 28px;
     transform: none;
-    z-index: auto;
+    z-index: 25;
     gap: 16px;
     max-width: calc(100% - 70px);
   }
 
   .brand-mark {
-    width: 84px;
-    height: 105px;
+    width: clamp(76px, 20vw, 84px);
+    height: clamp(95px, 25vw, 105px);
   }
 
   .brand-text {
@@ -1577,11 +1579,6 @@ body.menu-open .menu-toggle span:nth-child(2) {
     gap: 12px;
   }
 
-  .brand-mark {
-    width: 66px;
-    height: 82px;
-  }
-
   .brand-text {
     line-height: 1.25;
   }
@@ -1592,7 +1589,6 @@ body.menu-open .menu-toggle span:nth-child(2) {
 
   .hero {
     min-height: 560px;
-    padding-top: 78px;
   }
 
   .hero-title h1 {
