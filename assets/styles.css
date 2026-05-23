@@ -315,7 +315,7 @@ body.menu-open .menu-toggle span:nth-child(2) {
     position: relative;
     z-index: 20;
     transform-origin: top left;
-    transform: translate(-70px, -14px) scale(1.1);
+    transform: translate(-70px, -46px) scale(1.1);
   }
 
   .brand-mark {
@@ -325,13 +325,19 @@ body.menu-open .menu-toggle span:nth-child(2) {
 
   .global-nav {
     align-self: flex-start;
-    margin-top: 30px;
+    margin-top: 48px;
     margin-bottom: 0;
   }
 
   .hero-image {
-    width: calc(100% - 12px);
+    width: calc(100% - 28px);
     margin: 0 6px;
+  }
+
+  .side-copy-mobile {
+    top: 130px;
+    right: 6px;
+    transform: none;
   }
 }
 
@@ -1586,6 +1592,7 @@ body.menu-open .menu-toggle span:nth-child(2) {
 
   .hero {
     min-height: 560px;
+    padding-top: 78px;
   }
 
   .hero-title h1 {
