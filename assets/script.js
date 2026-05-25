@@ -2,6 +2,7 @@ const menuButton = document.getElementById('menuButton');
 const mobileMenu = document.getElementById('mobileMenu');
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
+const mediaVideoButton = document.querySelector('.media-video[data-youtube-src]');
 
 function setMenu(open) {
   if (!menuButton || !mobileMenu) return;
@@ -55,6 +56,27 @@ if (contactForm && formMessage) {
       });
   });
 }
+
+mediaVideoButton?.addEventListener('click', () => {
+  const src = mediaVideoButton.dataset.youtubeSrc;
+  if (!src) return;
+
+  const videoFrame = document.createElement('div');
+  videoFrame.className = 'media-video is-playing';
+
+  const iframe = document.createElement('iframe');
+  iframe.src = src;
+  iframe.title = '\u5F53\u793E\u4EE3\u8868\u304C\u51FA\u6F14\u3057\u305FYouTube\u52D5\u753B';
+  iframe.width = '840';
+  iframe.height = '473';
+  iframe.loading = 'lazy';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+  iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+  iframe.allowFullscreen = true;
+
+  videoFrame.append(iframe);
+  mediaVideoButton.replaceWith(videoFrame);
+});
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {

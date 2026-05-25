@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&amp;family=Rubik:wght@400;500;600;700&amp;family=Shippori+Mincho+B1:wght@400;500;600;700&amp;family=Zen+Kaku+Gothic+New:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css?v=20260525-5" />
+  <link rel="stylesheet" href="assets/styles.css?v=20260525-6" />
 </head>
 <body>
   <header class="site-header" id="top">
@@ -137,18 +137,19 @@
           <p>
             当社代表が大学在籍時、地域の森林利用に関する取り組みについて取材を受けました。（2020/10/31『長野県伊那市　社会林業都市への歩み』羽田土曜会）
           </p>
-          <div class="media-video" aria-label="当社代表が出演したYouTube動画">
-            <iframe
-              src="https://www.youtube.com/embed/WPA7bNDVLJ8?start=276&amp;rel=0&amp;playsinline=1"
-              title="当社代表が出演したYouTube動画"
-              width="840"
-              height="473"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen>
-            </iframe>
-          </div>
+          <figure class="media-feature">
+            <button
+              class="media-video"
+              type="button"
+              data-youtube-src="https://www.youtube.com/embed/WPA7bNDVLJ8?start=276&amp;rel=0&amp;playsinline=1&amp;autoplay=1"
+              aria-label="当社代表が出演したYouTube動画を再生する">
+              <img src="assets/media.webp" alt="森林で取材を受ける当社代表" loading="lazy" />
+              <span class="media-play" aria-hidden="true"></span>
+            </button>
+            <figcaption class="media-source">
+              出典：<a href="https://www.youtube.com/watch?v=WPA7bNDVLJ8" target="_blank" rel="noopener noreferrer">『長野県伊那市 社会林業都市への歩み』</a>羽田土曜会（2020年10月31日放送）
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
@@ -268,6 +269,6 @@
     <small>©2026 株式会社FTE</small>
   </footer>
 
-  <script src="assets/script.js?v=20260523"></script>
+  <script src="assets/script.js?v=20260525-2"></script>
 </body>
 </html>
