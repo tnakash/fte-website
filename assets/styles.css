@@ -503,6 +503,10 @@ body.menu-open .menu-toggle span:nth-child(2) {
   margin-bottom: 38px;
 }
 
+section#works {
+  padding-bottom: 84px;
+}
+
 .work-number {
   margin: 0;
   color: var(--line);
@@ -593,7 +597,7 @@ body.menu-open .menu-toggle span:nth-child(2) {
 
 .section-info {
   padding-bottom: 300px;
-  background: var(--soft);
+  background: var(--paper);
 }
 
 .empty-news {
@@ -693,6 +697,38 @@ body.menu-open .menu-toggle span:nth-child(2) {
 .company-detail dd {
   font-size: 14px;
   font-weight: 400;
+}
+
+.section-media {
+  padding-top: 92px;
+  padding-bottom: 140px;
+  background: var(--soft);
+}
+
+.media-body {
+  max-width: 760px;
+}
+
+.media-body p {
+  width: min(620px, 100%);
+  margin-bottom: 42px;
+}
+
+.media-video {
+  width: min(720px, 100%);
+  aspect-ratio: 16 / 9;
+  padding: 10px;
+  border: 1px solid rgba(87, 81, 76, 0.12);
+  border-radius: 10px;
+  background: rgba(247, 247, 247, 0.72);
+}
+
+.media-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 6px;
 }
 
 .contact-wrap {
@@ -1425,6 +1461,10 @@ body.menu-open .menu-toggle span:nth-child(2) {
     padding: 92px 30px 110px;
   }
 
+  section#works {
+    padding-bottom: 56px;
+  }
+
   .section-inner {
     display: block;
   }
@@ -1472,6 +1512,19 @@ body.menu-open .menu-toggle span:nth-child(2) {
 
   .section-info {
     padding-bottom: 210px;
+  }
+
+  .section-media {
+    padding-top: 72px;
+    padding-bottom: 104px;
+  }
+
+  .media-body p {
+    margin-bottom: 32px;
+  }
+
+  .media-video {
+    padding: 8px;
   }
 
   .wood-photo {
@@ -1648,6 +1701,10 @@ body.menu-open .menu-toggle span:nth-child(2) {
     padding: 78px 24px 92px;
   }
 
+  section#works {
+    padding-bottom: 46px;
+  }
+
   .section-body h2,
   .contact-panel h2 {
     margin-bottom: 26px;
@@ -1656,6 +1713,24 @@ body.menu-open .menu-toggle span:nth-child(2) {
 
   .section-body p {
     font-size: 14px;
+  }
+
+  .section-media {
+    padding-top: 60px;
+    padding-bottom: 88px;
+  }
+
+  .media-body p {
+    margin-bottom: 26px;
+  }
+
+  .media-video {
+    padding: 6px;
+    border-radius: 8px;
+  }
+
+  .media-video iframe {
+    border-radius: 5px;
   }
 
   .image-row {
