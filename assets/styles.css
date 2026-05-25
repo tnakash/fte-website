@@ -544,6 +544,10 @@ section#works {
   object-position: center 28%;
 }
 
+.image-book-cover {
+  object-position: center 48%;
+}
+
 .text-link {
   position: relative;
   display: inline-flex;
