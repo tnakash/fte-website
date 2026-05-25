@@ -280,8 +280,8 @@ body.menu-open .menu-toggle span:nth-child(2) {
   margin: 0;
   color: #000000;
   font-family: var(--side);
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 18px;
+  font-weight: 600;
   letter-spacing: 0.15em;
   line-height: 1.9;
   opacity: var(--side-copy-opacity, 0.84);
@@ -1121,7 +1121,7 @@ body.menu-open .menu-toggle span:nth-child(2) {
 }
 
 .works-service-actions {
-  width: min(760px, 100%);
+  width: 100%;
   justify-content: flex-end;
   margin: 28px auto 0;
 }
