@@ -120,3 +120,64 @@ if (sideCopies.length && messageSection) {
   window.addEventListener('scroll', requestSideCopyUpdate, { passive: true });
   window.addEventListener('resize', requestSideCopyUpdate);
 }
+
+const forgottenThreadPaths = document.querySelectorAll('.forgotten-thread-path');
+const forgottenThread = document.querySelector('.forgotten-thread');
+const forgottenHeroLogo = document.querySelector('.forgotten-hero-logo');
+
+if (forgottenThreadPaths.length) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const threadLength = forgottenThreadPaths[0].getTotalLength();
+  const threadStartRatio = 80 / 260;
+  const heroAnchorRatio = 0.86;
+  const threadAnchorOffset = -15;
+
+  const updateForgottenThreadAnchor = () => {
+    if (!forgottenThread || !forgottenHeroLogo) return;
+
+    const logoRect = forgottenHeroLogo.getBoundingClientRect();
+    const threadRect = forgottenThread.getBoundingClientRect();
+    const anchorX = logoRect.left + window.scrollX + (logoRect.width * heroAnchorRatio) + threadAnchorOffset;
+    const threadLeft = anchorX - (threadRect.width * threadStartRatio);
+
+    forgottenThread.style.setProperty('--forgotten-thread-left', `${threadLeft.toFixed(2)}px`);
+  };
+
+  forgottenThreadPaths.forEach((path) => {
+    path.style.strokeDasharray = String(threadLength);
+  });
+
+  if (reduceMotion) {
+    forgottenThreadPaths.forEach((path) => {
+      path.style.strokeDashoffset = '0';
+    });
+    updateForgottenThreadAnchor();
+    window.addEventListener('load', updateForgottenThreadAnchor);
+    window.addEventListener('resize', updateForgottenThreadAnchor);
+  } else {
+    let ticking = false;
+
+    const updateForgottenThread = () => {
+      updateForgottenThreadAnchor();
+
+      const scrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const progress = Math.min(Math.max((window.scrollY + window.innerHeight * 0.32) / (scrollable * 0.58), 0), 1);
+
+      forgottenThreadPaths.forEach((path) => {
+        path.style.strokeDashoffset = String(threadLength * (1 - progress));
+      });
+      ticking = false;
+    };
+
+    const requestForgottenThreadUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateForgottenThread);
+    };
+
+    updateForgottenThread();
+    window.addEventListener('load', requestForgottenThreadUpdate);
+    window.addEventListener('scroll', requestForgottenThreadUpdate, { passive: true });
+    window.addEventListener('resize', requestForgottenThreadUpdate);
+  }
+}
