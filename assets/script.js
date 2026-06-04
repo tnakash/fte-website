@@ -130,7 +130,7 @@ if (forgottenThreadPaths.length) {
   const threadLength = forgottenThreadPaths[0].getTotalLength();
   const threadStartRatio = 80 / 260;
   const heroAnchorRatio = 0.86;
-  const threadAnchorOffset = -15;
+  const threadAnchorOffset = -25;
 
   const updateForgottenThreadAnchor = () => {
     if (!forgottenThread || !forgottenHeroLogo) return;
@@ -161,7 +161,7 @@ if (forgottenThreadPaths.length) {
       updateForgottenThreadAnchor();
 
       const scrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-      const progress = Math.min(Math.max((window.scrollY + window.innerHeight * 0.32) / (scrollable * 0.58), 0), 1);
+      const progress = Math.min(Math.max((window.scrollY + window.innerHeight * 0.18) / (scrollable * 0.52), 0), 1);
 
       forgottenThreadPaths.forEach((path) => {
         path.style.strokeDashoffset = String(threadLength * (1 - progress));
@@ -179,5 +179,51 @@ if (forgottenThreadPaths.length) {
     window.addEventListener('load', requestForgottenThreadUpdate);
     window.addEventListener('scroll', requestForgottenThreadUpdate, { passive: true });
     window.addEventListener('resize', requestForgottenThreadUpdate);
+  }
+}
+
+const forgottenIntroFramePaths = document.querySelectorAll('.forgotten-intro-frame-path');
+
+if (forgottenIntroFramePaths.length) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const frameLengths = Array.from(forgottenIntroFramePaths, (path) => path.getTotalLength());
+
+  forgottenIntroFramePaths.forEach((path, index) => {
+    path.style.strokeDasharray = String(frameLengths[index]);
+  });
+
+  if (reduceMotion) {
+    forgottenIntroFramePaths.forEach((path) => {
+      path.style.strokeDashoffset = '0';
+    });
+  } else {
+    let ticking = false;
+
+    const updateForgottenIntroFrame = () => {
+      const rect = forgottenIntroFramePaths[0].getBoundingClientRect();
+      const start = window.innerHeight * 0.86;
+      const end = window.innerHeight * 0.28;
+      const progress = Math.min(Math.max((start - rect.top) / (start - end), 0), 1);
+
+      forgottenIntroFramePaths.forEach((path, index) => {
+        const pathProgress = index === 0
+          ? progress
+          : Math.min(Math.max((progress - 0.08) / 0.78, 0), 1);
+
+        path.style.strokeDashoffset = String(frameLengths[index] * (1 - pathProgress));
+      });
+      ticking = false;
+    };
+
+    const requestForgottenIntroFrameUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateForgottenIntroFrame);
+    };
+
+    updateForgottenIntroFrame();
+    window.addEventListener('load', requestForgottenIntroFrameUpdate);
+    window.addEventListener('scroll', requestForgottenIntroFrameUpdate, { passive: true });
+    window.addEventListener('resize', requestForgottenIntroFrameUpdate);
   }
 }
