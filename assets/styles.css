@@ -2160,52 +2160,20 @@ section#works {
   position: relative;
   display: grid;
   justify-items: center;
-  min-height: clamp(360px, 38vw, 510px);
-  padding: calc(clamp(70px, 9vw, 112px) - 40px) 0 clamp(28px, 4vw, 54px);
+  min-height: 0;
+  padding: clamp(220px, 30vw, 408px) 0 clamp(102px, 15vw, 216px);
   text-align: center;
   overflow: visible;
 }
 
-.forgotten-collection-figure {
-  position: absolute;
-  left: 50%;
-  bottom: clamp(4px, 1vw, 14px);
-  z-index: 0;
-  width: min(500px, 68vw);
-  aspect-ratio: 467 / 352;
-  background: #E2B65F;
-  opacity: 0.58;
-  transform: translateX(-50%);
+.forgotten-collection-title {
+  display: block;
+  width: min(520px, 82vw);
+  height: auto;
   filter:
-    drop-shadow(0 0 8px rgba(226, 182, 95, 0.36))
-    drop-shadow(0 0 20px rgba(216, 156, 72, 0.2))
-    drop-shadow(0 18px 34px rgba(3, 9, 24, 0.18));
-  -webkit-mask: url("open_book_man.svg") center / contain no-repeat;
-  mask: url("open_book_man.svg") center / contain no-repeat;
-}
-
-.forgotten-collection-head p {
-  position: relative;
-  z-index: 1;
-  transform: translateY(64px);
-  margin: 0 0 4px;
-  color: rgba(216, 188, 131, 0.72);
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  line-height: 1;
-}
-
-.forgotten-collection-head h2 {
-  position: relative;
-  z-index: 1;
-  transform: translateY(-20px);
-  margin: 0;
-  color: var(--forgotten-text);
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(24px, 2.7vw, 36px);
-  font-weight: 500;
-  letter-spacing: 0;
-  line-height: 1.1;
+    brightness(1.08)
+    saturate(1.04)
+    drop-shadow(0 16px 38px rgba(3, 9, 24, 0.26));
 }
 
 .forgotten-product-meta {
@@ -2233,6 +2201,17 @@ section#works {
 
 .forgotten-product-list::after {
   content: none;
+}
+
+.forgotten-coming-soon {
+  display: block;
+  width: min(360px, 66vw);
+  height: auto;
+  margin: clamp(24px, 4vw, 54px) auto 0;
+  filter:
+    brightness(1.08)
+    saturate(1.04)
+    drop-shadow(0 14px 32px rgba(3, 9, 24, 0.26));
 }
 
 .forgotten-product-card {
@@ -2390,13 +2369,25 @@ section#works {
 
 .forgotten-editor-link {
   display: inline-flex;
-  margin-top: 34px;
+  justify-content: center;
+  width: 100%;
+  margin-top: clamp(220px, 30vw, 408px);
   color: rgba(216, 188, 131, 0.76);
   font-family: "Cormorant Garamond", serif;
   font-size: 15px;
   letter-spacing: 0.08em;
   line-height: 1;
   transition: opacity 0.2s ease;
+}
+
+.forgotten-editor-link img {
+  display: block;
+  width: min(520px, 82vw);
+  height: auto;
+  filter:
+    brightness(1.08)
+    saturate(1.04)
+    drop-shadow(0 14px 32px rgba(3, 9, 24, 0.24));
 }
 
 .forgotten-editor-link:hover {
@@ -2828,6 +2819,18 @@ section#works {
     background: var(--forgotten-blue);
   }
 
+  .forgotten-products::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      linear-gradient(rgba(26, 47, 92, 0.78), rgba(26, 47, 92, 0.94)),
+      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / cover no-repeat;
+    opacity: 0.74;
+    pointer-events: none;
+  }
+
   .forgotten-intro-copy {
     display: none;
   }
@@ -2874,20 +2877,29 @@ section#works {
   }
 
   .forgotten-collection-head {
-    min-height: 330px;
-    padding: 22px 0 26px;
+    min-height: 0;
+    padding: 180px 0 84px;
   }
 
-  .forgotten-collection-figure {
-    left: 50%;
-    bottom: 10px;
-    width: min(320px, 84vw);
-    opacity: 0.52;
-    transform: translateX(-50%);
+  .forgotten-collection-title {
+    width: min(330px, 90vw);
   }
 
   .forgotten-product-list {
     padding-top: 34px;
+  }
+
+  .forgotten-coming-soon {
+    width: min(240px, 62vw);
+    margin-top: 32px;
+  }
+
+  .forgotten-editor-link {
+    margin-top: 180px;
+  }
+
+  .forgotten-editor-link img {
+    width: min(330px, 90vw);
   }
 
   .forgotten-section {
