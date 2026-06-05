@@ -2736,7 +2736,7 @@ section#works {
     isolation: isolate;
     min-height: 190svh;
     padding: 96px 20px 120px;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .forgotten-hero-logo {
@@ -2747,9 +2747,11 @@ section#works {
     position: relative;
     z-index: 4;
     display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(132px, 48vw);
     justify-items: start;
     align-content: start;
-    min-height: 150svh;
+    column-gap: 16px;
+    min-height: auto;
     width: min(94vw, 430px);
     padding: 42px 0 0 0;
     margin: 0 auto;
@@ -2773,18 +2775,23 @@ section#works {
   }
 
   .forgotten-mobile-logo-label {
+    grid-column: 1;
     justify-self: center;
-    width: min(44vw, 182px);
+    width: min(82vw, 340px);
     margin-right: 0;
   }
 
   .forgotten-mobile-rail {
-    position: absolute;
-    top: 86px;
-    right: -4px;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    position: relative;
+    top: auto;
+    right: auto;
     display: grid;
     justify-items: center;
+    align-content: start;
     gap: 16px;
+    width: 100%;
     overflow: visible;
   }
 
