@@ -1976,6 +1976,10 @@ section#works {
   height: auto;
 }
 
+.forgotten-mobile-logo {
+  display: none;
+}
+
 .forgotten-thread {
   position: absolute;
   top: calc(58vh + 25px);
@@ -2115,6 +2119,10 @@ section#works {
   filter:
     drop-shadow(0 0 4px rgba(216, 188, 131, 0.28))
     drop-shadow(0 0 10px rgba(200, 169, 107, 0.16));
+}
+
+.forgotten-intro-frame-path-mobile {
+  display: none;
 }
 
 .forgotten-intro-text {
@@ -2674,6 +2682,13 @@ section#works {
 }
 
 @media (max-width: 900px) {
+  .forgotten-site {
+    background:
+      linear-gradient(rgba(26, 47, 92, 0.58), rgba(26, 47, 92, 0.9)),
+      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / cover no-repeat,
+      var(--forgotten-blue);
+  }
+
   .forgotten-section-inner {
     grid-template-columns: 1fr;
     gap: 34px;
@@ -2695,46 +2710,144 @@ section#works {
 }
 
 @media (max-width: 560px) {
+  .forgotten-site {
+    background: var(--forgotten-blue);
+  }
+
+  .forgotten-hero::before,
+  .forgotten-intro::before,
+  .forgotten-products::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background:
+      linear-gradient(rgba(26, 47, 92, 0.62), rgba(26, 47, 92, 0.9)),
+      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") center center / cover no-repeat;
+    pointer-events: none;
+  }
+
+  .forgotten-intro::before,
+  .forgotten-products::before {
+    background-position: 44% center;
+  }
+
   .forgotten-hero {
+    isolation: isolate;
     min-height: 100svh;
-    padding: 116px 20px 96px;
+    padding: 96px 20px 88px;
   }
 
   .forgotten-hero-logo {
-    width: min(940px, calc(100vw - 46px));
+    display: none;
+  }
+
+  .forgotten-mobile-logo {
+    position: relative;
+    z-index: 4;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    min-height: 64svh;
+    width: min(72vw, 320px);
+    padding-right: 70px;
+    margin: 0 auto;
+    filter:
+      brightness(1.16)
+      saturate(1.08)
+      drop-shadow(0 18px 40px rgba(3, 9, 24, 0.38));
+  }
+
+  .forgotten-mobile-logo-main,
+  .forgotten-mobile-logo-label,
+  .forgotten-mobile-logo-pen {
+    display: block;
+    height: auto;
+  }
+
+  .forgotten-mobile-logo-main {
+    width: 100%;
+    max-height: 58svh;
+  }
+
+  .forgotten-mobile-logo-label {
+    width: min(58vw, 230px);
+    margin-top: 0;
+  }
+
+  .forgotten-mobile-rail {
+    position: absolute;
+    top: calc(50% + 8px);
+    right: 10px;
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    width: clamp(48px, 13vw, 66px);
+  }
+
+  .forgotten-mobile-logo-pen {
+    justify-self: start;
+    width: 68%;
+    margin-left: 50%;
+    opacity: 0.84;
+    transform: scaleY(-1);
   }
 
   .forgotten-thread {
-    left: var(--forgotten-thread-left, calc(100vw - 134px));
-    width: 210px;
-    height: calc(100% - 26vh);
+    display: none;
   }
 
   .forgotten-intro {
-    padding: 84px 24px 118px;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 88px 24px 118px;
+  }
+
+  .forgotten-products {
+    isolation: isolate;
   }
 
   .forgotten-intro-copy {
     gap: 9px;
-    margin-bottom: 260px;
+    margin-bottom: 150px;
   }
 
   .forgotten-intro-text {
+    font-size: 15px;
     line-height: 2;
   }
 
   .forgotten-intro-frame {
-    padding: 54px 34px 62px;
+    width: 100%;
+    padding: 38px 24px 44px;
   }
 
   .forgotten-intro-frame svg {
-    left: 10%;
-    width: 96%;
+    inset: 0;
+    left: auto;
+    width: 100%;
+    height: 100%;
   }
 
   .forgotten-intro-frame-path {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .forgotten-intro-frame-path {
+    display: none;
+  }
+
+  .forgotten-intro-frame-path-secondary {
+    display: none;
+  }
+
+  .forgotten-intro-frame-path-mobile {
+    display: block;
     stroke-width: 1;
-    opacity: 0.8;
+    opacity: 0.82;
+    stroke-dashoffset: 0 !important;
   }
 
   .forgotten-collection-head {
