@@ -2725,6 +2725,8 @@ section#works {
       linear-gradient(rgba(26, 47, 92, 0.62), rgba(26, 47, 92, 0.9)),
       url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") center center / cover no-repeat;
     pointer-events: none;
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 
   .forgotten-intro::before,
@@ -2734,7 +2736,7 @@ section#works {
 
   .forgotten-hero {
     isolation: isolate;
-    min-height: 190svh;
+    min-height: clamp(1320px, 370vw, 1640px);
     padding: 96px 20px 120px;
     overflow: hidden;
   }
