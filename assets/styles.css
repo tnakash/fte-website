@@ -2713,7 +2713,7 @@ section#works {
   .forgotten-site {
     background:
       linear-gradient(rgba(26, 47, 92, 0.62), rgba(26, 47, 92, 0.9)),
-      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / auto max(150vh, 1230px) no-repeat,
+      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / auto max(200vh, 1640px) no-repeat,
       var(--forgotten-blue);
     background-attachment: scroll;
   }
@@ -2839,7 +2839,7 @@ section#works {
 
   .forgotten-intro-frame {
     width: 100%;
-    padding: 42px 30px 50px;
+    padding: 58px 42px 66px;
   }
 
   .forgotten-intro-frame svg {
@@ -2867,6 +2867,9 @@ section#works {
     display: block;
     stroke-width: 1;
     opacity: 0.82;
+    filter:
+      drop-shadow(0 0 4px rgba(216, 188, 131, 0.28))
+      drop-shadow(0 0 10px rgba(200, 169, 107, 0.16));
     stroke-dashoffset: 0 !important;
   }
 
