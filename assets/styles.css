@@ -2713,7 +2713,7 @@ section#works {
   .forgotten-site {
     background:
       linear-gradient(rgba(26, 47, 92, 0.62), rgba(26, 47, 92, 0.9)),
-      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / auto max(100vh, 820px) repeat-y,
+      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / auto max(100vh, 820px) no-repeat,
       var(--forgotten-blue);
     background-attachment: scroll;
   }
@@ -2814,10 +2814,18 @@ section#works {
     overflow: hidden;
     margin-top: -72px;
     padding: 132px 24px 112px;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(26, 47, 92, 0) 0%,
+        rgba(26, 47, 92, 0.88) 72px,
+        var(--forgotten-blue) 150px
+      );
   }
 
   .forgotten-products {
     isolation: isolate;
+    background: var(--forgotten-blue);
   }
 
   .forgotten-intro-copy {
