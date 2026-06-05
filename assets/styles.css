@@ -2713,7 +2713,7 @@ section#works {
   .forgotten-site {
     background:
       linear-gradient(rgba(26, 47, 92, 0.62), rgba(26, 47, 92, 0.9)),
-      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / auto max(100vh, 820px) no-repeat,
+      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / auto max(150vh, 1230px) no-repeat,
       var(--forgotten-blue);
     background-attachment: scroll;
   }
