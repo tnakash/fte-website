@@ -2750,7 +2750,7 @@ section#works {
     align-content: start;
     min-height: 68svh;
     width: min(90vw, 390px);
-    padding: 52px 70px 0 0;
+    padding: 52px 118px 0 0;
     margin: 0 auto;
     filter:
       brightness(1.16)
@@ -2766,8 +2766,8 @@ section#works {
   }
 
   .forgotten-mobile-logo-main {
-    width: clamp(48px, 13vw, 66px);
-    max-height: 58svh;
+    width: clamp(92px, 31vw, 126px);
+    max-height: 64svh;
   }
 
   .forgotten-mobile-logo-label {
@@ -2779,14 +2779,14 @@ section#works {
   .forgotten-mobile-rail {
     position: absolute;
     top: 92px;
-    right: 8px;
+    right: 0;
     display: grid;
     justify-items: center;
     gap: 16px;
   }
 
   .forgotten-mobile-logo-pen {
-    width: clamp(34px, 10vw, 48px);
+    width: clamp(58px, 18vw, 74px);
     margin: 0;
     opacity: 0.84;
     transform: scaleY(-1);
