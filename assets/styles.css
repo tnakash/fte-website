@@ -2734,8 +2734,8 @@ section#works {
 
   .forgotten-hero {
     isolation: isolate;
-    min-height: 100svh;
-    padding: 96px 20px 88px;
+    min-height: 190svh;
+    padding: 96px 20px 120px;
     overflow: visible;
   }
 
@@ -2749,7 +2749,7 @@ section#works {
     display: grid;
     justify-items: start;
     align-content: start;
-    min-height: 78svh;
+    min-height: 150svh;
     width: min(94vw, 430px);
     padding: 42px 0 0 0;
     margin: 0 auto;
@@ -2768,7 +2768,7 @@ section#works {
   }
 
   .forgotten-mobile-logo-main {
-    width: clamp(178px, 64vw, 258px);
+    width: clamp(132px, 48vw, 190px);
     max-height: none;
   }
 
@@ -2789,7 +2789,7 @@ section#works {
   }
 
   .forgotten-mobile-logo-pen {
-    width: clamp(112px, 40vw, 158px);
+    width: clamp(82px, 30vw, 116px);
     margin: 0;
     opacity: 0.84;
     transform: scaleY(-1);
