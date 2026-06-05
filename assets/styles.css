@@ -2711,38 +2711,28 @@ section#works {
 
 @media (max-width: 560px) {
   .forgotten-site {
-    background: var(--forgotten-blue);
+    background:
+      linear-gradient(rgba(26, 47, 92, 0.62), rgba(26, 47, 92, 0.9)),
+      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / auto max(100vh, 820px) repeat-y,
+      var(--forgotten-blue);
+    background-attachment: scroll;
   }
 
   .forgotten-hero::before,
   .forgotten-intro::before,
   .forgotten-products::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -2;
-    background:
-      linear-gradient(rgba(26, 47, 92, 0.62), rgba(26, 47, 92, 0.9)),
-      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") center center / cover no-repeat;
-    pointer-events: none;
-    transform: translateZ(0);
-    backface-visibility: hidden;
+    content: none;
   }
 
   .forgotten-hero::after {
-    z-index: -1;
+    z-index: 1;
     background:
       linear-gradient(
         180deg,
         rgba(26, 47, 92, 0) 0%,
-        rgba(26, 47, 92, 0.38) 42%,
-        rgba(26, 47, 92, 0.92) 100%
+        rgba(26, 47, 92, 0.18) 54%,
+        rgba(26, 47, 92, 0.72) 100%
       );
-  }
-
-  .forgotten-intro::before,
-  .forgotten-products::before {
-    background-position: 44% center;
   }
 
   .forgotten-hero {
