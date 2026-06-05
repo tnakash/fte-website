@@ -2811,7 +2811,7 @@ section#works {
   .forgotten-intro {
     isolation: isolate;
     overflow: hidden;
-    padding: 88px 24px 118px;
+    padding: 72px 24px 112px;
   }
 
   .forgotten-products {
@@ -2819,8 +2819,7 @@ section#works {
   }
 
   .forgotten-intro-copy {
-    gap: 9px;
-    margin-bottom: 150px;
+    display: none;
   }
 
   .forgotten-intro-text {
@@ -2830,7 +2829,7 @@ section#works {
 
   .forgotten-intro-frame {
     width: 100%;
-    padding: 38px 24px 44px;
+    padding: 42px 30px 50px;
   }
 
   .forgotten-intro-frame svg {

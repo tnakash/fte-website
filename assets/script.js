@@ -182,7 +182,7 @@ if (forgottenThreadPaths.length) {
   }
 }
 
-const forgottenIntroFramePaths = document.querySelectorAll('.forgotten-intro-frame-path');
+const forgottenIntroFramePaths = document.querySelectorAll('.forgotten-intro-frame-path:not(.forgotten-intro-frame-path-mobile)');
 
 if (forgottenIntroFramePaths.length) {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
