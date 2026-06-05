@@ -2729,6 +2729,17 @@ section#works {
     backface-visibility: hidden;
   }
 
+  .forgotten-hero::after {
+    z-index: -1;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(26, 47, 92, 0) 0%,
+        rgba(26, 47, 92, 0.38) 42%,
+        rgba(26, 47, 92, 0.92) 100%
+      );
+  }
+
   .forgotten-intro::before,
   .forgotten-products::before {
     background-position: 44% center;
@@ -2811,7 +2822,8 @@ section#works {
   .forgotten-intro {
     isolation: isolate;
     overflow: hidden;
-    padding: 72px 24px 112px;
+    margin-top: -72px;
+    padding: 132px 24px 112px;
   }
 
   .forgotten-products {
