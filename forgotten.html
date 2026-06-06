@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Noto+Sans+JP:wght@400;500;700&amp;family=Shippori+Mincho+B1:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/styles.css?v=20260606-threadrevert" />
+  <link rel="stylesheet" href="assets/styles.css?v=20260606-editorpending" />
 </head>
 <body class="forgotten-site">
   <div class="forgotten-thread" aria-hidden="true">
@@ -62,12 +62,12 @@
     <section class="forgotten-products reveal" id="products">
       <div class="forgotten-products-inner">
         <div class="forgotten-collection-head">
-          <img class="forgotten-collection-title" src="assets/forgotten_collections.svg?v=20260605" alt="Our Collection" loading="lazy" />
+          <img class="forgotten-collection-title" src="assets/forgotten_collections.svg?v=20260606-ourcollection" alt="Our Collection" loading="lazy" />
         </div>
         <img class="forgotten-coming-soon" src="assets/forgotten_coming.svg?v=20260605" alt="Coming Soon..." loading="lazy" />
         <div class="forgotten-editor-link">
           <img src="assets/forgotten_editor.svg?v=20260605-align" alt="" loading="lazy" />
-          <a class="forgotten-heading-action" href="editorial.html">Read Notes <span aria-hidden="true">→</span></a>
+          <span class="forgotten-heading-action forgotten-link-pending" aria-disabled="true">Read Notes <span aria-hidden="true">→</span></span>
         </div>
         <div class="forgotten-about-link reveal">
           <img src="assets/forgotten_about.svg?v=20260606-about" alt="" loading="lazy" />
@@ -82,7 +82,7 @@
       <nav class="forgotten-footer-nav" aria-label="Forgotten Tales & Enigmas footer">
         <a href="forgotten.html" aria-current="page">Forgotten Home</a>
         <a href="#products">Our Collection</a>
-        <a href="editorial.html">Editor's Notes</a>
+        <span class="forgotten-footer-pending" aria-disabled="true">Editor's Notes</span>
         <a href="forgotten-about.html">About Us</a>
         <a href="index.html#contact">Contact</a>
       </nav>
