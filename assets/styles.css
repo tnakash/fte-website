@@ -2438,6 +2438,21 @@ section#works {
   text-decoration-color: currentColor;
 }
 
+.forgotten-link-pending,
+.forgotten-footer-pending {
+  cursor: default;
+  opacity: 0.48;
+  text-decoration: none;
+}
+
+.forgotten-footer-pending {
+  color: var(--forgotten-gold-light);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
 @media (min-width: 761px) {
   .forgotten-collection-title {
     width: min(655px, 78vw);
