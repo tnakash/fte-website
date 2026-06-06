@@ -227,3 +227,38 @@ if (forgottenIntroFramePaths.length) {
     window.addEventListener('resize', requestForgottenIntroFrameUpdate);
   }
 }
+
+const forgottenAboutThreadPath = document.querySelector('.forgotten-about-thread-path');
+
+if (forgottenAboutThreadPath) {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const mobileLayout = window.matchMedia('(max-width: 760px)').matches;
+  const pathLength = forgottenAboutThreadPath.getTotalLength();
+
+  forgottenAboutThreadPath.style.strokeDasharray = String(pathLength);
+
+  if (reduceMotion || mobileLayout) {
+    forgottenAboutThreadPath.style.strokeDashoffset = '0';
+  } else {
+    let ticking = false;
+
+    const updateForgottenAboutThread = () => {
+      const scrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+      const progress = Math.min(Math.max((window.scrollY + window.innerHeight * 0.12) / (scrollable * 0.94), 0), 1);
+
+      forgottenAboutThreadPath.style.strokeDashoffset = String(pathLength * (1 - progress));
+      ticking = false;
+    };
+
+    const requestForgottenAboutThreadUpdate = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(updateForgottenAboutThread);
+    };
+
+    updateForgottenAboutThread();
+    window.addEventListener('load', requestForgottenAboutThreadUpdate);
+    window.addEventListener('scroll', requestForgottenAboutThreadUpdate, { passive: true });
+    window.addEventListener('resize', requestForgottenAboutThreadUpdate);
+  }
+}
