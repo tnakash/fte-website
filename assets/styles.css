@@ -1932,7 +1932,7 @@ section#works {
   min-height: 100%;
   background:
     linear-gradient(rgba(26, 47, 92, 0.58), rgba(26, 47, 92, 0.9)),
-    url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") center top / cover fixed no-repeat,
+    url("janko-ferlic-sfL_QOnmy00-unsplash.jpg?v=20260607") center top / cover fixed no-repeat,
     var(--forgotten-blue);
   color: var(--forgotten-text);
   font-family: "Shippori Mincho B1", "Yu Mincho", serif;
@@ -2803,7 +2803,7 @@ section#works {
   .forgotten-site {
     background:
       linear-gradient(rgba(26, 47, 92, 0.62), rgba(26, 47, 92, 0.9)),
-      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / auto max(200vh, 1640px) no-repeat,
+      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg?v=20260607") 44% top / auto max(200vh, 1640px) no-repeat,
       var(--forgotten-blue);
     background-attachment: scroll;
   }
@@ -3037,7 +3037,7 @@ section#works {
   overflow-x: clip;
   background:
     linear-gradient(rgba(14, 31, 63, 0.7), rgba(26, 47, 92, 0.94)),
-    url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") center top / cover fixed no-repeat,
+    url("janko-ferlic-sfL_QOnmy00-unsplash.jpg?v=20260607") center top / cover fixed no-repeat,
     var(--forgotten-blue);
 }
 
@@ -3400,7 +3400,7 @@ section#works {
   .forgotten-about-site {
     background:
       linear-gradient(rgba(14, 31, 63, 0.78), rgba(26, 47, 92, 0.97)),
-      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 42% top / auto 100vh no-repeat,
+      url("janko-ferlic-sfL_QOnmy00-unsplash.jpg?v=20260607") 42% top / auto 100vh no-repeat,
       var(--forgotten-blue);
   }
 
