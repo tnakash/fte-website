@@ -3212,8 +3212,7 @@ section#works {
 }
 
 .forgotten-about-return::before {
-  content: "←";
-  margin-right: 10px;
+  content: none;
 }
 
 .forgotten-about-hero-inner {
@@ -3292,15 +3291,43 @@ section#works {
 }
 
 .forgotten-about-section {
-  padding: clamp(170px, 22vw, 300px) clamp(24px, 7vw, 100px);
+  padding: clamp(86px, 11vw, 150px) clamp(24px, 7vw, 100px);
   background: transparent;
 }
 
 .forgotten-about-site main > .forgotten-about-section:first-child {
-  padding-top: clamp(100px, 14vw, 180px);
+  padding-top: clamp(50px, 7vw, 90px);
+}
+
+.forgotten-about-return {
+  position: relative;
+  z-index: 2;
+  top: auto;
+  left: auto;
+  width: auto;
+  margin: clamp(34px, 5vw, 66px) clamp(24px, 5vw, 72px) clamp(42px, 5vw, 68px);
+}
+
+.forgotten-about-return a {
+  display: inline-flex;
+  align-items: center;
+  color: var(--forgotten-gold-light);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-shadow: 0 0 14px rgba(216, 188, 131, 0.32);
+  transition: color 180ms ease, text-shadow 180ms ease;
+}
+
+.forgotten-about-return a:hover,
+.forgotten-about-return a:focus-visible {
+  color: #f0cf8a;
+  text-shadow: 0 0 18px rgba(240, 207, 138, 0.5);
 }
 
 .forgotten-about-team {
+  padding-top: clamp(170px, 22vw, 300px);
   background: transparent;
 }
 
@@ -3361,7 +3388,7 @@ section#works {
 
 .forgotten-about-work-list {
   display: grid;
-  gap: 34px;
+  gap: 22px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -3562,11 +3589,26 @@ section#works {
   }
 
   .forgotten-about-section {
-    padding: 132px 24px 154px;
+    padding: 66px 24px 78px;
   }
 
   .forgotten-about-site main > .forgotten-about-section:first-child {
-    padding-top: 90px;
+    padding-top: 45px;
+  }
+
+  .forgotten-about-return {
+    top: auto;
+    left: auto;
+    width: auto;
+    margin: 28px 24px 46px;
+  }
+
+  .forgotten-about-return a {
+    font-size: 14px;
+  }
+
+  .forgotten-about-team {
+    padding-top: 142px;
   }
 
   .forgotten-about-section-inner {
