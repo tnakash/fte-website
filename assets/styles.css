@@ -472,6 +472,15 @@ body.menu-open .menu-toggle span:nth-child(2) {
   line-height: 1.9;
 }
 
+.work-item p:not(.work-number),
+.media-body p,
+.empty-news {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 2.1;
+}
+
 .message-body p:last-of-type {
   margin-bottom: 50px;
 }
@@ -550,7 +559,6 @@ section#works {
 
 .work-item p:not(.work-number) {
   margin-bottom: 26px;
-  font-size: 14px;
 }
 
 .image-row {
@@ -689,37 +697,36 @@ section#works {
 
 .company-detail dl {
   display: grid;
-  gap: 25px;
+  gap: 22px;
   margin: 0;
 }
 
 .company-detail dl div {
   display: grid;
-  grid-template-columns: 70px minmax(0, 1fr);
-  gap: 8px;
+  grid-template-columns: 104px minmax(0, 1fr);
+  gap: 24px;
   align-items: start;
 }
 
 .company-detail dt,
 .company-detail dd {
   margin: 0;
-  padding-bottom: 6px;
   color: var(--ink);
-  letter-spacing: 0.1em;
-  line-height: 1.5;
 }
 
 .company-detail dt {
   position: relative;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 2;
 }
 
 .company-detail dt::after {
   content: "";
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 5px;
   left: 0;
   height: 1px;
   background: var(--accent);
@@ -727,7 +734,9 @@ section#works {
 
 .company-detail dd {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  line-height: 2;
 }
 
 .section-media {
@@ -1909,6 +1918,13 @@ section#works {
 
   .section-body p {
     font-size: 14px;
+  }
+
+  .work-item p:not(.work-number),
+  .media-body p,
+  .empty-news {
+    font-size: 14px;
+    line-height: 2;
   }
 
   .section-media {
