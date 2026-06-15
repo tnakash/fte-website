@@ -2526,9 +2526,19 @@ section#works {
   margin-top: clamp(150px, 20vw, 270px);
 }
 
+.forgotten-heading-title-link {
+  display: block;
+  max-width: 90vw;
+  transition: filter 0.25s ease;
+}
+
+.forgotten-about-link .forgotten-heading-title-link {
+  width: min(579px, 90vw);
+}
+
 .forgotten-about-link img {
   display: block;
-  width: min(579px, 90vw);
+  width: 100%;
   height: auto;
   filter:
     brightness(1.08)
@@ -2587,7 +2597,16 @@ section#works {
   }
 
   .forgotten-about-link img {
+    width: 100%;
+  }
+
+  .forgotten-about-link .forgotten-heading-title-link {
     width: min(496px, 78vw);
+  }
+
+  .forgotten-heading-title-link:hover,
+  .forgotten-heading-title-link:focus-visible {
+    filter: brightness(1.12);
   }
 
   .forgotten-heading-action {
@@ -3452,16 +3471,22 @@ section#works {
 
 @media (max-width: 560px) {
   .forgotten-about-work-list li {
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto minmax(24px, 1fr);
     gap: 4px 10px;
+    align-items: baseline;
   }
 
   .forgotten-about-work-list li::after {
-    flex: 1 1 24px;
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
     min-width: 16px;
   }
 
   .forgotten-about-work-list small {
+    grid-column: 1 / -1;
+    grid-row: 2;
     font-size: 13px;
   }
 }
@@ -3667,7 +3692,12 @@ section#works {
   }
 
   .forgotten-about-link img {
-    width: min(248px, 90vw);
+    width: 100%;
+  }
+
+  .forgotten-about-link .forgotten-heading-title-link {
+    width: min(280px, 90vw);
+    padding: 16px;
   }
 
   .forgotten-heading-action {
