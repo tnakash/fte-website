@@ -2107,12 +2107,12 @@ section#works {
 
 .forgotten-thread {
   position: absolute;
-  top: calc(58vh + 25px);
+  top: calc(63vh + 25px);
   left: var(--forgotten-thread-left, calc(100vw - clamp(16px, 7.5vw, 112px) - 200px));
   right: auto;
   z-index: 11;
   width: 260px;
-  height: calc(100% - 24vh);
+  height: var(--forgotten-thread-height, 1160px);
   opacity: 0.92;
   filter: drop-shadow(0 0 3px rgba(200, 169, 107, 0.22));
   pointer-events: none;

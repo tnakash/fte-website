@@ -124,6 +124,7 @@ if (sideCopies.length && messageSection) {
 const forgottenThreadPaths = document.querySelectorAll('.forgotten-thread-path');
 const forgottenThread = document.querySelector('.forgotten-thread');
 const forgottenHeroLogo = document.querySelector('.forgotten-hero-logo');
+const forgottenIntroFrame = document.querySelector('.forgotten-intro-frame');
 
 if (forgottenThreadPaths.length) {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -133,14 +134,19 @@ if (forgottenThreadPaths.length) {
   const threadAnchorOffset = -25;
 
   const updateForgottenThreadAnchor = () => {
-    if (!forgottenThread || !forgottenHeroLogo) return;
+    if (!forgottenThread || !forgottenHeroLogo || !forgottenIntroFrame) return;
 
     const logoRect = forgottenHeroLogo.getBoundingClientRect();
-    const threadRect = forgottenThread.getBoundingClientRect();
+    const frameRect = forgottenIntroFrame.getBoundingClientRect();
     const anchorX = logoRect.left + window.scrollX + (logoRect.width * heroAnchorRatio) + threadAnchorOffset;
-    const threadLeft = anchorX - (threadRect.width * threadStartRatio);
+    const threadLeft = anchorX - (260 * threadStartRatio);
+    const threadRect = forgottenThread.getBoundingClientRect();
+    const threadTop = threadRect.top + window.scrollY;
+    const frameStartY = frameRect.top + window.scrollY + (frameRect.height * (26 / 310));
+    const threadHeight = Math.max(frameStartY - threadTop, 320);
 
     forgottenThread.style.setProperty('--forgotten-thread-left', `${threadLeft.toFixed(2)}px`);
+    forgottenThread.style.setProperty('--forgotten-thread-height', `${threadHeight.toFixed(2)}px`);
   };
 
   forgottenThreadPaths.forEach((path) => {
@@ -160,8 +166,11 @@ if (forgottenThreadPaths.length) {
     const updateForgottenThread = () => {
       updateForgottenThreadAnchor();
 
-      const scrollable = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-      const progress = Math.min(Math.max((window.scrollY + window.innerHeight * 0.18) / (scrollable * 0.52), 0), 1);
+      const frameRect = forgottenIntroFrame.getBoundingClientRect();
+      const frameStartY = frameRect.top + window.scrollY;
+      const drawStartY = window.innerHeight * 0.08;
+      const drawEndY = Math.max(frameStartY - window.innerHeight * 0.72, drawStartY + 1);
+      const progress = Math.min(Math.max((window.scrollY - drawStartY) / (drawEndY - drawStartY), 0), 1);
 
       forgottenThreadPaths.forEach((path) => {
         path.style.strokeDashoffset = String(threadLength * (1 - progress));
@@ -201,7 +210,7 @@ if (forgottenIntroFramePaths.length) {
 
     const updateForgottenIntroFrame = () => {
       const rect = forgottenIntroFramePaths[0].getBoundingClientRect();
-      const start = window.innerHeight * 0.86;
+      const start = window.innerHeight * 0.8;
       const end = window.innerHeight * 0.28;
       const progress = Math.min(Math.max((start - rect.top) / (start - end), 0), 1);
 
