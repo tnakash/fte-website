@@ -2055,7 +2055,7 @@ section#works {
   --forgotten-serif: "Anthanista", "Cormorant Garamond", "Shippori Mincho B1", "Yu Mincho", serif;
   min-height: 100%;
   background:
-    linear-gradient(rgba(26, 47, 92, 0.58), rgba(26, 47, 92, 0.9)),
+    linear-gradient(rgba(14, 31, 63, 0.7), rgba(26, 47, 92, 0.94)),
     url("janko-ferlic-sfL_QOnmy00-unsplash.jpg?v=20260607") center top / cover fixed no-repeat,
     var(--forgotten-blue);
   color: var(--forgotten-text);
@@ -2898,7 +2898,7 @@ section#works {
 @media (max-width: 900px) {
   .forgotten-site {
     background:
-      linear-gradient(rgba(26, 47, 92, 0.58), rgba(26, 47, 92, 0.9)),
+      linear-gradient(rgba(14, 31, 63, 0.7), rgba(26, 47, 92, 0.94)),
       url("janko-ferlic-sfL_QOnmy00-unsplash.jpg") 44% top / cover no-repeat,
       var(--forgotten-blue);
   }
@@ -2926,7 +2926,7 @@ section#works {
 @media (max-width: 560px) {
   .forgotten-site {
     background:
-      linear-gradient(rgba(26, 47, 92, 0.62), rgba(26, 47, 92, 0.9)),
+      linear-gradient(rgba(14, 31, 63, 0.78), rgba(26, 47, 92, 0.97)),
       url("janko-ferlic-sfL_QOnmy00-unsplash.jpg?v=20260607") 44% top / auto max(200vh, 1640px) no-repeat,
       var(--forgotten-blue);
     background-attachment: scroll;
